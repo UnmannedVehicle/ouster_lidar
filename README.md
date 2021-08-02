@@ -31,3 +31,16 @@ dnsmasq: reading /etc/resolv.conf
 dnsmasq: using nameserver 127.0.1.1#53
 dnsmasq: read /etc/hosts - 10 addresses
 ```
+You need to wait until you see something like:
+```
+dnsmasq-dhcp: DHCPDISCOVER(enxa0cec8c012f8) [HWaddr]
+dnsmasq-dhcp: DHCPOFFER(enxa0cec8c012f8) [ping name] [HWaddr]
+dnsmasq-dhcp: DHCPREQUEST(enxa0cec8c012f8) [ping name] [HWaddr]
+```
+Now you're ready for business. Lets see what IP address it's on (10.5.5.87). Lets ping it
+```
+ping [ping name]
+```
+and we're good to go!
+
+# ROS Connection
