@@ -44,3 +44,14 @@ ping [ping name]
 and we're good to go!
 
 # ROS Connection
+## set parameters
+Determine the parameters in the launch file
+```
+sensor_hostname = LaunchConfiguration('sensor_hostname', default="10.5.5.86")
+lidar_mode = LaunchConfiguration('sensor_hostname', default="512x10")
+udp_dest = LaunchConfiguration('udp_dest', default="10.5.5.2")
+```
+Now that we have a connection over the network, lets view some data. After building your colcon workspace with this package, source the install space. Run
+```
+ros2 launch ouster_ros ouster.launch.py
+```
